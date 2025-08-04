@@ -37,7 +37,7 @@ jobs:
         id: run-test
         run: npm run test
       - name: Upload test report
-        if: stpes.run-testoutcome == 'failure'
+        if: failure() && stpes.run-testoutcome == 'failure'
         uses: actions/upload-artifact@v3
         with:
           name: test-report
