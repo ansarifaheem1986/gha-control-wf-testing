@@ -1,0 +1,12 @@
+name: Testing call wf
+on: workflow_dispatch
+
+jobs:
+  testing:
+    runs-on: self-hosted
+    steps:
+      - name: Running wf to call  
+        run: echo "Running this workflow"
+  wfcall:
+    needs: testing
+    uses: .github/workflows/callingwf
